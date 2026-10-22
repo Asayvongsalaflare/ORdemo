@@ -51,7 +51,18 @@ public class Solution {
         this.seq.remove(fromPosition);
         this.seq.add(toPosition,j1);
     }
-
+    /**
+     * Swap the jobs at the two specified positions in the job sequence.
+     * Modifies the sequence in-place; all other jobs keep their relative order.
+     *
+     * @param position1 first position (0-based, in {0, ..., n-1})
+     * @param position2 second position (0-based, in {0, ..., n-1})
+     */
+    public void SwapJobs(int position1, int position2) {
+        Job temp = this.seq.get(position1);
+        this.seq.set(position1, this.seq.get(position2));
+        this.seq.set(position2, temp);
+    }
     /**
      * This is a method that reverses the subsequence of jobs between two positions in job sequence
      * @param position1 This is the position of the first job in the subsequence to be reversed
